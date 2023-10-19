@@ -1,0 +1,12 @@
+const xhr = new XMLHttpRequest();
+const url = "https://ifsc.razorpay.com/YESB0DNB002";
+xhr.open("GET", url);
+xhr.onload = () => {
+  if (xhr.status === 200) {
+    const response = JSON.parse(xhr.responseText);
+    console.log(response);
+  } else {
+    console.error(`Request failed. Status: ${xhr.status}`);
+  }
+};
+xhr.send();
